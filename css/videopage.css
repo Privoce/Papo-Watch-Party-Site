@@ -1,0 +1,58 @@
+.party-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.papo-brand {
+  display: flex;
+}
+
+.brand-host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brand-host a,
+.brand-host h2 {
+  font-size: 14px;
+  color: #fafafa;
+}
+
+.videoUrl {
+  display: flex;
+}
+
+.play-btn {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+  color: #fafafa;
+  width: 40px;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  color: #fafafa;
+}
+
+.chat-header {
+  padding-left: 10px;
+}
+
+.header-counter {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+
+.header-counter img {
+  width: 47px;
+  height: 20px;
+}
+
+.header-counter h2 {
+  font-size: 16px;
+}

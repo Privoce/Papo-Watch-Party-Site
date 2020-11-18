@@ -18,7 +18,14 @@
     <script src="/socket.io/socket.io.js"></script>
 
     <!-- Font awesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+
+    <!-- <script>
+      document.getElementById('login-btn').addEventListener('click', showNavbar);
+      function showNavbar() {
+        document.getElementById('party-nav').style.display = 'show';
+      }
+    </script> -->
 
     <!-- Custom styles for this template -->
     <link href="css/small-business.css" rel="stylesheet" />
@@ -27,6 +34,7 @@
     <link href="css/mobile-style.css" rel="stylesheet" />
     <link href="css/html5player.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
+    <link href="css/videopage.css" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
@@ -40,80 +48,41 @@
       <h1>Entering...</h1>
     </div>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="display: none">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#Home">
-          <!-- <img
-            src="img/logo.png"
-            alt="Vynchronize logo"
-            height="40"
-            width="40"
-          /> -->
-          Papo Watch Party</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <!-- <li class="nav-item active">
-              <a class="nav-link js-scroll-trigger" href="#Home">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li> -->
-            <!--<li class="nav-item">
-              <a
-                id="chat-nav"
-                class="nav-link js-scroll-trigger hide"
-                href="#messageArea"
-                >Chatroom</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                id="about-nav"
-                class="nav-link js-scroll-trigger hide"
-                href="#about"
-                >About</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                id="contact-nav"
-                class="nav-link js-scroll-trigger hide"
-                href="#contact"
-                >Contact</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                class="nav-link js-scroll-trigger"
-                href="https://www.facebook.com/vynchronize"
-              >
-                <i class="fab fa-facebook"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                class="nav-link js-scroll-trigger"
-                href="https://github.com/kyle8998/Vynchronize"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-            </li> -->
-          </ul>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="display: show">
+      <div class="container party-nav">
+        <div class="papo-brand">
+          <img src="img/logo-img.png" alt="Papo Party logo" height="40" width="40" />
+          <div class="brand-host">
+            <a class="navbar-brand js-scroll-trigger" href="#Home"> Papo Watch Party</a>
+            <h2>
+              <span id="hostlabel" class="label label-default">Host: </span>
+            </h2>
+          </div>
+        </div>
+        <div class="videoUrl">
+          <input
+            type="Video"
+            style="max-width: 80000px; margin-right: 0.5rem; margin-bottom: 0.5rem; float: left"
+            id="inputVideoId"
+            placeholder="Enter a video url..."
+          />
+          <button id="changeButton" onclick="changeVideoParse(roomnum)" class="play-btn"><i class="fas fa-play fa-2x"></i> Play</button>
+          <button id="usersList" class="play-btn"><i class="fas fa-user-friends fa-2x"></i> Users</button>
+        </div>
+        <div class="chat-header">
+          <div class="header-counter">
+            <h2>Talk to your room friends!</h2>
+            <img src="img/counter.png" alt="User Counter" />
+          </div>
+          <button
+            style="background-color: transparent"
+            type="button"
+            class="nonmobile-hide play-btn"
+            data-toggle="modal"
+            data-target="#inviteModal"
+          >
+            <i class="fas fa-share-alt fa-2x"></i>
+          </button>
         </div>
       </div>
     </nav>
@@ -206,9 +175,6 @@
 
             <!-- INVITE MOVED TO MODAL -->
             <!-- <p id="invite">Invite a friend! Send them the link: vynchronize.herokuapp.com/ROOMNUM</p> -->
-            <h2>
-              <span id="hostlabel" class="label label-default"><i class="fas fa-user"></i>Host: Kyle </span>
-            </h2>
 
             <!----------------------------------- PLAYER AREA ----------------------------------->
 
@@ -287,13 +253,6 @@
             <div id="persoff"></div>
 
             <div class="topbotmargins">
-              <input
-                type="Video"
-                style="max-width: 200px; margin-right: 0.5rem; margin-bottom: 0.5rem; float: left"
-                class="form-control"
-                id="inputVideoId"
-                placeholder="Video ID / URL"
-              />
               <!-- <button
                 id="enqueueButton"
                 onclick="enqueueVideoParse(roomnum)"
@@ -378,16 +337,6 @@
               </div>
 
               <!-- Trigger the modal with a button -->
-              <button
-                style="background-color: #007bff"
-                type="button"
-                class="nonmobile-hide btn btn-info btn-sm invite-button"
-                data-toggle="modal"
-                data-target="#inviteModal"
-              >
-                <i style="width: 30px; height: 30px" class="fas fa-user-plus"></i><br />
-                <h5>Share</h5>
-              </button>
             </div>
             <hr style="height: 0pt; visibility: hidden" />
             <h5 style="color: gray">Papo Chat</h5>
