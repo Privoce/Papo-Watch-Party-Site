@@ -4,7 +4,6 @@ body {
 
 #roomArea {
   display: none;
-  margin-bottom: 5em;
 }
 
 #initArea {
@@ -38,7 +37,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgba(192, 192, 192, 0.5);
-  background-image: url("/img/loader.gif");
+  background-image: url('/img/loader.gif');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -46,7 +45,7 @@ body {
 html,
 body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .headsize {
@@ -186,10 +185,11 @@ select[multiple].input-sm {
 }
 
 .chat {
-  width: 500px;
-  height: 300px;
+  min-width: 325px;
+  min-height: 80vh;
   overflow: scroll;
   border: 1px solid gray;
+  background-color: #fafafa;
 }
 
 .message-well {
@@ -197,7 +197,7 @@ select[multiple].input-sm {
 }
 
 .chat-form {
-  width: 500px;
+  min-width: 325px;
 }
 
 .online-users {
@@ -332,7 +332,7 @@ select[multiple].input-sm {
 }
 
 .tooltip .tooltiptext::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 100%;
   left: 50%;
@@ -454,8 +454,7 @@ select[multiple].input-sm {
   text-align: center;
   outline: none;
   text-decoration: none;
-  transition: color 0.3s ease-out, background-color 0.3s ease-out,
-    border-color 0.3s ease-out;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
 }
 
 .ghost-button-full-color:hover,
@@ -463,8 +462,7 @@ select[multiple].input-sm {
   background-color: #e05555;
   border-color: #e05555;
   color: #fff;
-  transition: color 0.3s ease-in, background-color 0.3s ease-in,
-    border-color 0.3s ease-in;
+  transition: color 0.3s ease-in, background-color 0.3s ease-in, border-color 0.3s ease-in;
 }
 
 .footer {

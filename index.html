@@ -48,8 +48,8 @@
       <h1>Entering...</h1>
     </div>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="display: show">
-      <div class="container party-nav">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+      <div class="container-fluid party-nav">
         <div class="papo-brand">
           <img src="img/logo-img.png" alt="Papo Party logo" height="40" width="40" />
           <div class="brand-host">
@@ -62,12 +62,29 @@
         <div class="videoUrl">
           <input
             type="Video"
-            style="max-width: 80000px; margin-right: 0.5rem; margin-bottom: 0.5rem; float: left"
+            style="max-width: 800px; min-width: 470px; margin-right: 0.5rem; margin-bottom: 0.5rem; float: left"
             id="inputVideoId"
             placeholder="Enter a video url..."
           />
           <button id="changeButton" onclick="changeVideoParse(roomnum)" class="play-btn"><i class="fas fa-play fa-2x"></i> Play</button>
-          <button id="usersList" class="play-btn"><i class="fas fa-user-friends fa-2x"></i> Users</button>
+          <div class="dropdown">
+            <button
+              class="play-btn"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fas fa-user-friends fa-2x"></i> Users
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <!-- <div class="col-md-13"> -->
+              <div class="well online-users noscrollbar">
+                <ul class="list-group" id="users"></ul>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="chat-header">
           <div class="header-counter">
@@ -88,7 +105,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container-fluid">
       <!-- Loading page -->
       <!-- Loader is currently dependent on the dailymotion api because it is the slowest -->
       <div id="loading"></div>
@@ -126,8 +143,8 @@
       <div id="roomArea">
         <!-- Heading Row -->
         <div class="row my-4" style="margin-top: 0px !important">
-          <div class="col-lg-7">
-            <div class="nonmobile-hide"><b>Note: </b>Only the host can control the video using the native video player controls</div>
+          <div class="col-lg-9">
+            <!-- <div class="nonmobile-hide"><b>Note: </b>Only the host can control the video using the native video player controls</div> -->
             <div class="mobile-hide">
               <b>Mobile User</b>, please play the video once manually to give the browser permission to control the video player.
             </div>
@@ -180,7 +197,7 @@
 
             <div id="playerArea">
               <div class="video" id="player"></div>
-              <!-- <iframe class="video" id="player" allowfullscreen="0" rel="0" width="640" height="360" src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1" frameborder="1" style="border: solid 4px #37474F"></iframe> -->
+              <!-- <iframe class="video" id="player" allowfullscreen="0" rel="0" width="100%" height="100%" src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1" frameborder="1" style="border: solid 4px #37474F"></iframe> -->
             </div>
             <div id="dailyArea">
               <div class="video" id="player-daily"></div>
@@ -190,8 +207,8 @@
                 class="video"
                 id="player-vimeo"
                 src="https://player.vimeo.com/video/76979871"
-                width="640"
-                height="360"
+                width="100%"
+                height="100%"
                 frameborder="0"
                 webkitallowfullscreen
                 mozallowfullscreen
@@ -202,8 +219,8 @@
               <div class="html5player">
                 <video
                   src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                  width="640"
-                  height="360"
+                  width="100%"
+                  height="100%"
                   class="video html5video"
                   id="html5src"
                   controls
@@ -217,16 +234,16 @@
 
             <!----------------------------------- PLAYER AREA ----------------------------------->
             <!-- <hr> -->
-            <div>
-              <button id="playButton" onclick="playVideo(roomnum)" style="margin-top: 0.5rem" class="btn btn-primary">
+            <!--<div>
+              <!-- <button id="playButton" onclick="playVideo(roomnum)" style="margin-top: 0.5rem" class="btn btn-primary">
                 <i class="fa fa-play"></i> Play / <i class="fa fa-pause"></i> Pause
               </button>
 
               <button id="syncbutton" onclick="syncVideo(roomnum);syncAlert()" style="margin-top: 0.5rem" class="btn btn-primary">
                 <i class="fa fa-sync"></i> Force Sync
-              </button>
+              </button> -->
 
-              <!-- <button
+            <!-- <button
                 id="loveButton"
                 onclick="loveLive(roomnum)"
                 style="margin-top: 0.5rem"
@@ -234,8 +251,8 @@
               >
                 <i class="far fa-heart"></i> Random K-pop
               </button> -->
-              <!-- <br/> -->
-              <!-- <button
+            <!-- <br/> -->
+            <!-- <button
                 id="hostbutton"
                 onclick="changeHost(roomnum)"
                 style="margin-top: 0.5rem"
@@ -243,11 +260,11 @@
               >
                 <i class="fas fa-users"></i> Make me the host!
               </button> -->
-              <!-- Turn off the lights -->
-              <button id="lightButton" style="margin-top: 0.5rem" class="btn btn-primary switch">
+            <!-- Turn off the lights -->
+            <!-- <button id="lightButton" style="margin-top: 0.5rem" class="btn btn-primary switch">
                 <i style="pointer-events: none" class="fas fa-lightbulb"></i>
               </button>
-            </div>
+            </div> -->
 
             <!-- Div for lights off! -->
             <div id="persoff"></div>
@@ -268,11 +285,12 @@
                 <i class="fas fa-trash"></i> Empty Queue
               </button> -->
             </div>
+            -->
             <div>
               <!-- <a class="ghost-button-full-color"><i class="far fa-times-circle"></i></a> -->
-              <button id="changeButton" onclick="changeVideoParse(roomnum)" class="btn btn-primary">
+              <!-- <button id="changeButton" onclick="changeVideoParse(roomnum)" class="btn btn-primary">
                 <i class="fas fa-exchange-alt"></i> Change Video
-              </button>
+              </button> -->
               <!-- <button
                 id="previousButton"
                 onclick="prevVideo(roomnum)"
@@ -287,12 +305,10 @@
               >
                 <i class="fas fa-step-forward"></i> Next
               </button> -->
-
-              <br />
             </div>
             <!-- <input type="file" id="html5-input" /> -->
             <!-- Playlist shit -->
-            <div id="visual-queue" class="vid-list-container">
+            <!-- <div id="visual-queue" class="vid-list-container">
               <ul class="vid-list" id="vidlist">
                 <li class="vid-item">
                   <!-- <div class="thumb">
@@ -301,10 +317,10 @@
                                 </div>
                                 <div class="desc">
                                     Jessica Hernandez & the Deltas - Dead Brains
-                                </div> -->
+                                </div>
                 </li>
               </ul>
-            </div>
+            </div> -->
             <!-- <div id="queue-arrows" class="arrows">
               <div class="arrow-left">
                 <i class="fa fa-chevron-left fa-lg"></i>
@@ -320,27 +336,21 @@
             <!-- <input type="Video" style="max-width: 200px; margin-right: .5rem; margin-bottom: .5rem; float: left;" class="form-control" id="inputVideoURL" placeholder="Direct URL to .mp4/.webm"> -->
 
             <!-- <p style="display: none" id="html5-message" class="lead">Video File Upload Not Yet Supported</p> -->
-            <p style="display: none" id="beta-message" class="lead">Queue is currently only supported by YouTube</p>
+            <!-- <p style="display: none" id="beta-message" class="lead">Queue is currently only supported by YouTube</p> -->
           </div>
 
           <!-- /.col-lg-8 -->
-          <div class="col-lg-5">
+          <div class="col-lg-3">
             <!-- <div class="col-md-4"> -->
             <!-- <div id="onlineArea" class="row"> -->
-            <h5 class="right-header">Users</h5>
-            <hr style="height: 0pt; visibility: hidden" />
-
+            <!-- <hr style="height: 0pt; visibility: hidden" /> -->
             <!-- <br/> -->
-            <div class="col-md-13">
+            <!-- <div class="col-md-13 dropdown-menu" aria-labelledby="usersList">
               <div class="well online-users noscrollbar">
                 <ul class="list-group" id="users"></ul>
               </div>
-
-              <!-- Trigger the modal with a button -->
-            </div>
-            <hr style="height: 0pt; visibility: hidden" />
-            <h5 style="color: gray">Papo Chat</h5>
-
+            </div> -->
+            <!-- Trigger the modal with a button -->
             <!-- Modal -->
             <div id="inviteModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
@@ -377,12 +387,11 @@
             <!-- </div> -->
 
             <div id="messageArea" class="row">
-              <br />
               <!-- <h2 style="color:gray">Chat</h2> -->
               <div class="col-md-12">
                 <div class="chat noscrollbar" id="chat"></div>
                 <!-- Message Form (Enter Message) -->
-                <form id="messageForm">
+                <form id="messageForm" style="margin: 0">
                   <div class="form-group">
                     <br />
                     <!-- <label>Enter Message...</label> -->
