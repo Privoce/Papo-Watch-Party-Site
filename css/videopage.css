@@ -61,3 +61,8 @@
   height: 90vh;
   width: 70vw;
 }
+
+#playerArea iframe {
+  width: 106%;
+  height: 98%;
+}

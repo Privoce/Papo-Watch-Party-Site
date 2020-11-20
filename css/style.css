@@ -185,8 +185,9 @@ select[multiple].input-sm {
 }
 
 .chat {
-  min-width: 325px;
+  min-width: 315px;
   min-height: 80vh;
+  max-height: 81vh;
   overflow: scroll;
   border: 1px solid gray;
   background-color: #fafafa;
@@ -197,7 +198,7 @@ select[multiple].input-sm {
 }
 
 .chat-form {
-  min-width: 325px;
+  min-width: 315px;
 }
 
 .online-users {
