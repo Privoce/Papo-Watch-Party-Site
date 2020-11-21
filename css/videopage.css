@@ -66,3 +66,12 @@
   width: 106%;
   height: 98%;
 }
+
+.chat-user {
+  display: flex;
+  flex-direction: column;
+}
+.chat-msg {
+  display: flex;
+  flex-direction: column;
+}

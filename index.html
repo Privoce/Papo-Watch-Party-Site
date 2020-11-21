@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
 
@@ -21,10 +18,7 @@
     <script src="/socket.io/socket.io.js"></script>
 
     <!-- Font awesome -->
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
-    ></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
 
     <!-- <script>
       document.getElementById('login-btn').addEventListener('click', showNavbar);
@@ -42,29 +36,11 @@
     <link href="css/login.css" rel="stylesheet" />
     <link href="css/videopage.css" rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="img/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/favicon-16x16.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
   </head>
 
   <body id="Home">
@@ -75,16 +51,9 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
       <div class="container-fluid party-nav">
         <div class="papo-brand">
-          <img
-            src="img/logo-img.png"
-            alt="Papo Party logo"
-            height="40"
-            width="40"
-          />
+          <img src="img/logo-img.png" alt="Papo Party logo" height="40" width="40" />
           <div class="brand-host">
-            <a class="navbar-brand js-scroll-trigger" href="#Home">
-              Papo Watch Party</a
-            >
+            <a class="navbar-brand js-scroll-trigger" href="#Home"> Papo Watch Party</a>
             <h2>
               <span id="hostlabel" class="label label-default">Host: </span>
             </h2>
@@ -93,23 +62,11 @@
         <div class="videoUrl">
           <input
             type="Video"
-            style="
-              max-width: 800px;
-              min-width: 470px;
-              margin-right: 0.5rem;
-              margin-bottom: 0.5rem;
-              float: left;
-            "
+            style="max-width: 800px; min-width: 470px; margin-right: 0.5rem; margin-bottom: 0.5rem; float: left"
             id="inputVideoId"
             placeholder="Enter a video url..."
           />
-          <button
-            id="changeButton"
-            onclick="changeVideoParse(roomnum)"
-            class="play-btn"
-          >
-            <i class="fas fa-play fa-2x"></i> Play
-          </button>
+          <button id="changeButton" onclick="changeVideoParse(roomnum)" class="play-btn"><i class="fas fa-play fa-2x"></i> Play</button>
           <div class="dropdown">
             <button
               class="play-btn"
@@ -167,28 +124,16 @@
               <br />
               <!-- <p style="color: red; margin-bottom: 0px" id="missinginfo2"></p> -->
               <!-- <button type="button" onClick="randomroom()" class="btn btn-primary random">Random</button> -->
-              <input
-                required
-                placeholder="Password"
-                type="password"
-                id="roomnum"
-              />
+              <input required placeholder="Password" type="password" id="roomnum" />
               <br />
-              <input
-                style="margin-top: 10px"
-                type="submit"
-                class="btn btn-primary loginbtn"
-                value="Enter"
-              />
+              <input style="margin-top: 10px" type="submit" class="btn btn-primary loginbtn" value="Enter" />
               <br />
               <img src="img/googleLogin.png" alt="Login with Google" />
               <br />
               <img src="img/fbLogin.png" alt="Login with Facebook" />
               <hr style="height: 65pt; visibility: hidden" />
               <div class="signup">
-                <p>
-                  Doesn't have a Papo account? <a href="/">Sign up for free!</a>
-                </p>
+                <p>Doesn't have a Papo account? <a href="/">Sign up for free!</a></p>
               </div>
             </div>
           </form>
@@ -201,8 +146,7 @@
           <div class="col-lg-9">
             <!-- <div class="nonmobile-hide"><b>Note: </b>Only the host can control the video using the native video player controls</div> -->
             <div class="mobile-hide">
-              <b>Mobile User</b>, please play the video once manually to give
-              the browser permission to control the video player.
+              <b>Mobile User</b>, please play the video once manually to give the browser permission to control the video player.
             </div>
             <!-- <hr style="height:0pt; visibility:hidden;" /> -->
 
@@ -414,15 +358,10 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h4 class="modal-title">Invite Friends</h4>
-                    <button type="button" class="close" data-dismiss="modal">
-                      &times;
-                    </button>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
                   <div class="modal-body">
-                    <p>
-                      Send a friend your unique room link so they can watch
-                      videos too!
-                    </p>
+                    <p>Send a friend your unique room link so they can watch videos too!</p>
                     <!-- <p style="text-align: center;" id="invite">vynchronize.herokuapp.com/ROOMNUM</p> -->
                     <input
                       class="inv_input"
@@ -435,24 +374,11 @@
                   </div>
                   <div class="modal-footer">
                     <div style="opacity: 1" class="tooltip">
-                      <button
-                        type="button"
-                        class="btn btn-default"
-                        onclick="copyInvite()"
-                        onmouseout="outFunc()"
-                      >
-                        <span class="tooltiptext" id="myTooltip"
-                          >Copy to clipboard</span
-                        ><i class="fas fa-clipboard"></i> Copy to Clipboard
+                      <button type="button" class="btn btn-default" onclick="copyInvite()" onmouseout="outFunc()">
+                        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span><i class="fas fa-clipboard"></i> Copy to Clipboard
                       </button>
                     </div>
-                    <button
-                      type="button"
-                      class="btn btn-default"
-                      data-dismiss="modal"
-                    >
-                      Close
-                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -469,11 +395,7 @@
                   <div class="form-group">
                     <br />
                     <!-- <label>Enter Message...</label> -->
-                    <input
-                      class="form-control chat-form"
-                      id="message"
-                      placeholder="Enter Message..."
-                    />
+                    <input class="form-control chat-form" id="message" autocomplete="off" placeholder="Enter Message..." />
                     <!-- <textarea class="form-control" id="message"></textarea> -->
                     <br />
                     <!-- <input type="submit" class="btn btn-primary" value="Send Message" /> -->
@@ -620,26 +542,25 @@
     <script>
       var socket = io.connect();
       var roomnum = 1;
-      var id = "1Io_r6s7BZY";
-      var username = "";
+      var id = '1Io_r6s7BZY';
+      var username = '';
       // Don't allow trailing or leading whitespace!
-      var nosymbols = new RegExp(
-        "^(([a-zA-Z0-9_-][a-zA-Z0-9 _-]*[a-zA-Z0-9_-])|([a-zA-Z0-9_-]*))$"
-      );
+      var nosymbols = new RegExp('^(([a-zA-Z0-9_-][a-zA-Z0-9 _-]*[a-zA-Z0-9_-])|([a-zA-Z0-9_-]*))$');
 
       // Chat stuff
       $(function () {
-        var $messageForm = $("#messageForm");
-        var $message = $("#message");
-        var $chat = $("#chat");
-        var $roomArea = $("#roomArea");
-        var $userFormArea = $("#userFormArea");
-        var $userForm = $("#userForm");
-        var $users = $("#users");
-        var $username = $("#username");
-        var $roomnum = $("#roomnum");
+        var $messageForm = $('#messageForm');
+        var $message = $('#message');
+        var $chat = $('#chat');
+        var $roomArea = $('#roomArea');
+        var $userFormArea = $('#userFormArea');
+        var $userForm = $('#userForm');
+        var $users = $('#users');
+        var $username = $('#username');
+        var $roomnum = $('#roomnum');
+        var $userColor = $('#userColor');
 
-        var $vidlist = $("#vidlist");
+        var $vidlist = $('#vidlist');
 
         //   function send_message() {
         //       socket.emit('send message', $message.val());
@@ -654,15 +575,16 @@
         //     }
         // });
 
+        //Messages
         $messageForm.submit(function (e) {
           e.preventDefault();
           // console.log("Submitted");
-          socket.emit("send message", $message.val());
-          $message.val("");
+          socket.emit('send message', $message.val());
+          $message.val('');
         });
 
-        socket.on("new message", function (data) {
-          var last_div = $(".chat > div:last")[0];
+        socket.on('new message', function (data) {
+          var last_div = $('.chat > div:last')[0];
 
           // This checks for the last user
           // If you are the last user, attach the message instead of creating a new div
@@ -670,30 +592,31 @@
             var myRegex = /.*<strong>(.+)<\/strong>.*/g;
             var match = myRegex.exec(last_div.innerHTML);
             console.log(last_div.innerHTML);
-            var last_user = "";
+            var last_user = '';
             if (match != null) {
-              console.log("found the user!" + match[1]);
+              console.log('found the user!' + match[1]);
               last_user = match[1];
             }
           }
           if (data.user != last_user) {
             $chat.append(
-              '<div class="well well-sm message-well"><strong>' +
+              '<i class="fas fa-circle fa-2x" style="margin-right: 10px;"></i>' +
+                '<div class="well well-sm message-well"><strong>' +
                 data.user +
-                "</strong>: " +
+                '</strong>: ' +
                 data.msg +
-                "</div>"
+                '</div>',
             );
             // $vidlist.append('<div class="vid-item"><div class="thumb"><img src="http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"></div><div class="desc">Jessica Hernandez & the Deltas - Dead Brains</div></div>');
           }
           // If you sent the last message, append to previous
           else {
-            last_div.innerHTML = last_div.innerHTML + " <br> " + data.msg;
+            last_div.innerHTML = last_div.innerHTML + '<br />' + data.msg;
             // $vidlist.append('<div class="vid-item"><div class="thumb"><img src="http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"></div><div class="desc">Jessica Hernandez & the Deltas - Dead Brains</div></div>');
           }
           // $chat.scrollTop = $chat.scrollHeight;
           // Auto scroll on each message send!
-          $("div#chat").scrollTop($("div#chat")[0].scrollHeight);
+          $('div#chat').scrollTop($('div#chat')[0].scrollHeight);
         });
 
         function newRoom({ user, room }) {
@@ -703,37 +626,34 @@
           // var roomnum_val = $roomnum.val().trim();
 
           // If name not entered
-          if (user === "") {
-            console.log("ENTER A NAME");
-            var noname = document.getElementById("missinginfo");
-            noname.innerHTML = "Surely you have a name right? Enter it below!";
+          if (user === '') {
+            console.log('ENTER A NAME');
+            var noname = document.getElementById('missinginfo');
+            noname.innerHTML = 'Surely you have a name right? Enter it below!';
           }
           // If name is too long
           else if (user.length > 30) {
-            console.log("NAME IS TOO LONG");
-            var noname = document.getElementById("missinginfo");
-            noname.innerHTML =
-              "Your name can't possibly be over 30 characters!";
+            console.log('NAME IS TOO LONG');
+            var noname = document.getElementById('missinginfo');
+            noname.innerHTML = "Your name can't possibly be over 30 characters!";
           }
           // If roomnate
           else if (room.length > 50) {
-            console.log("ROOM NAME IS TOO LONG");
-            var noname = document.getElementById("missinginfo");
-            noname.innerHTML =
-              "How are you going to remember a room code that has more than 50 characters?";
+            console.log('ROOM NAME IS TOO LONG');
+            var noname = document.getElementById('missinginfo');
+            noname.innerHTML = 'How are you going to remember a room code that has more than 50 characters?';
           }
           // If Room contains symbols
           // Can only be reached if the user decided to be sneaky and paste them!
           else if (!nosymbols.test(room)) {
-            console.log("ENTER A PROPER ROOMNUMBER");
-            var noname = document.getElementById("missinginfo");
-            noname.innerHTML = "";
-            var noname2 = document.getElementById("missinginfo2");
-            noname2.innerHTML =
-              "Please enter a room ID without symbols or leading/trailing whitespace!";
+            console.log('ENTER A PROPER ROOMNUMBER');
+            var noname = document.getElementById('missinginfo');
+            noname.innerHTML = '';
+            var noname2 = document.getElementById('missinginfo2');
+            noname2.innerHTML = 'Please enter a room ID without symbols or leading/trailing whitespace!';
           } else {
             username = user;
-            socket.emit("new user", user, function (data) {
+            socket.emit('new user', user, function (data) {
               if (data) {
                 $userFormArea.hide();
                 $roomArea.show();
@@ -749,29 +669,28 @@
                 // initStuff.innerHTML = ""
 
                 // This sets the room number on the client
-                if (room != "") {
+                if (room != '') {
                   roomnum = room;
                 }
 
                 // Sets the invite link (roomnum)
                 // document.getElementById('invite').innerHTML = "vynchronize.herokuapp.com/" + roomnum
-                document.getElementById("inv_input").value =
-                  "http://party.privoce.com/" + roomnum;
-                history.pushState("", "Papo Watch Party", roomnum);
+                document.getElementById('inv_input').value = 'http://party.privoce.com/' + roomnum;
+                history.pushState('', 'Papo Watch Party', roomnum);
               }
             });
             // Join room
-            socket.emit("new room", room, function (data) {
+            socket.emit('new room', room, function (data) {
               // This should only call back if the client is the host
               if (data) {
-                console.log("Host is syncing the new socket!");
+                console.log('Host is syncing the new socket!');
                 syncVideo(roomnum);
               }
             });
 
-            document.getElementById("cover").classList.remove("hideall");
-            document.getElementById("cover").classList.add("hide");
-            $username.val("");
+            document.getElementById('cover').classList.remove('hideall');
+            document.getElementById('cover').classList.add('hide');
+            $username.val('');
           }
         }
 
@@ -780,8 +699,8 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
 
-        const user = urlParams.get("user");
-        const room = urlParams.get("room");
+        const user = urlParams.get('user');
+        const room = urlParams.get('room');
 
         setTimeout(() => {
           if (user && room) {
@@ -790,8 +709,8 @@
               room,
             });
           } else {
-            document.getElementById("cover").classList.remove("hideall");
-            document.getElementById("cover").classList.add("hide");
+            document.getElementById('cover').classList.remove('hideall');
+            document.getElementById('cover').classList.add('hide');
           }
         }, 1500);
 
@@ -806,13 +725,10 @@
           });
         });
 
-        socket.on("get users", function (data) {
-          var html = "";
+        socket.on('get users', function (data) {
+          var html = '';
           for (i = 0; i < data.length; i++) {
-            html +=
-              '<li style="padding-right: 10em;" class="list-group-item chat-users">' +
-              data[i] +
-              "</li>";
+            html += '<li style="padding-right: 10em;" class="list-group-item chat-users">' + data[i] + '</li>';
             // html += '<div class="well well-sm message-well">' + data[i] + '</div>';
             // <div class="well well-sm message-well"><strong>
           }
@@ -822,10 +738,10 @@
 
         // Updates the queue
         // Parameters - vidlist, currPlayer, videoId
-        socket.on("get vidlist", function (data) {
-          console.log("i am updating the queue");
+        socket.on('get vidlist', function (data) {
+          console.log('i am updating the queue');
           var yt = data.vidlist.yt;
-          var html = "";
+          var html = '';
           if (yt.length > 0) {
             for (i = 0; i < yt.length; i++) {
               html +=
@@ -839,7 +755,7 @@
                 i +
                 ')" class="desc">' +
                 yt[i].title +
-                "</a></li>";
+                '</a></li>';
             }
           } else {
             html += '<li class="vid-item"></li>';
@@ -849,21 +765,15 @@
         });
 
         // Prevent special characters from being typed
-        $("#roomnum").on("keypress", function (event) {
-          var nosymbols = new RegExp("^[a-zA-Z0-9\s]+$");
-          var key = String.fromCharCode(
-            !event.charCode ? event.which : event.charCode
-          );
+        $('#roomnum').on('keypress', function (event) {
+          var nosymbols = new RegExp('^[a-zA-Z0-9\s]+$');
+          var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
           console.log(key);
           console.log(event.keyCode);
           // Allow enters and spaces to be used still
           if (
             $roomnum.val().length > 50 ||
-            (!nosymbols.test(key) &&
-              event.keyCode != 13 &&
-              event.keyCode != 32 &&
-              event.keyCode != 45 &&
-              event.keyCode != 95)
+            (!nosymbols.test(key) && event.keyCode != 13 && event.keyCode != 32 && event.keyCode != 45 && event.keyCode != 95)
           ) {
             event.preventDefault();
             return false;
@@ -871,19 +781,13 @@
         });
 
         // Prevent special characters from being typed
-        $("#username").on("keypress", function (event) {
-          var nosymbols = new RegExp("^[a-zA-Z0-9\s]+$");
-          var key = String.fromCharCode(
-            !event.charCode ? event.which : event.charCode
-          );
+        $('#username').on('keypress', function (event) {
+          var nosymbols = new RegExp('^[a-zA-Z0-9\s]+$');
+          var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
           // Allow enters and spaces to be used still
           if (
             $username.val().length > 30 ||
-            (!nosymbols.test(key) &&
-              event.keyCode != 13 &&
-              event.keyCode != 32 &&
-              event.keyCode != 45 &&
-              event.keyCode != 95)
+            (!nosymbols.test(key) && event.keyCode != 13 && event.keyCode != 32 && event.keyCode != 45 && event.keyCode != 95)
           ) {
             event.preventDefault();
             return false;
@@ -893,14 +797,14 @@
 
       // Remove the video from the queue at idx
       function removeAt(idx) {
-        socket.emit("remove at", {
+        socket.emit('remove at', {
           idx: idx,
         });
       }
 
       function playAt(idx) {
         socket.emit(
-          "play at",
+          'play at',
           {
             idx: idx,
           },
@@ -908,27 +812,27 @@
             var videoId = data.videoId;
 
             // Change the video
-            socket.emit("change video", {
+            socket.emit('change video', {
               room: roomnum,
               videoId: videoId,
               time: 0,
             });
-          }
+          },
         );
       }
 
       // Turn off the lights!
       var per = 0;
       $(document).ready(function () {
-        $("#persoff").css("height", $(document).height()).hide();
+        $('#persoff').css('height', $(document).height()).hide();
         $(document).click(function (e) {
-          if (!$(e.target).hasClass("switch") && per == 1) {
-            $("#persoff").toggle();
+          if (!$(e.target).hasClass('switch') && per == 1) {
+            $('#persoff').toggle();
             per = 0;
           }
         });
-        $(".switch").click(function () {
-          $("#persoff").toggle();
+        $('.switch').click(function () {
+          $('#persoff').toggle();
           per += 1;
           if (per == 2) {
             per = 0;
@@ -938,64 +842,62 @@
 
       // playlist
       $(document).ready(function () {
-        $(".arrow-right").bind("click", function (event) {
+        $('.arrow-right').bind('click', function (event) {
           event.preventDefault();
-          $(".vid-list-container").stop().animate(
+          $('.vid-list-container').stop().animate(
             {
-              scrollLeft: "+=336",
+              scrollLeft: '+=336',
             },
-            750
+            750,
           );
         });
-        $(".arrow-left").bind("click", function (event) {
+        $('.arrow-left').bind('click', function (event) {
           event.preventDefault();
-          $(".vid-list-container").stop().animate(
+          $('.vid-list-container').stop().animate(
             {
-              scrollLeft: "-=336",
+              scrollLeft: '-=336',
             },
-            750
+            750,
           );
         });
       });
 
       // set id
-      socket.on("set id", function (data) {
+      socket.on('set id', function (data) {
         // Ensure no valid id too
-        if (data.id != "" && nosymbols.test(data.id)) {
-          document.getElementById("roomnum").value = data.id;
+        if (data.id != '' && nosymbols.test(data.id)) {
+          document.getElementById('roomnum').value = data.id;
           // Probably should not force it to be readonly
           // document.getElementById('roomnum').readOnly = true
-          console.log("You are joining room: " + data.id);
+          console.log('You are joining room: ' + data.id);
         }
         // Reset url for next person
         // Workaround
-        socket.emit("reset url");
+        socket.emit('reset url');
       });
 
       function copyInvite() {
         /* Get the text field */
-        var copyText = document.getElementById("inv_input");
+        var copyText = document.getElementById('inv_input');
         console.log(copyText);
         /* Select the text field */
         copyText.select();
         /* Copy the text inside the text field */
-        document.execCommand("Copy");
+        document.execCommand('Copy');
         /* Alert the copied text */
         // alert("Copied the text: " + copyText.value);
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copied!";
+        var tooltip = document.getElementById('myTooltip');
+        tooltip.innerHTML = 'Copied!';
       }
 
       function outFunc() {
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copy to clipboard";
+        var tooltip = document.getElementById('myTooltip');
+        tooltip.innerHTML = 'Copy to clipboard';
       }
 
       // Generate a random alphanumeric room id
       function randomroom() {
-        document.getElementById("roomnum").value = Math.random()
-          .toString(36)
-          .substr(2, 12);
+        document.getElementById('roomnum').value = Math.random().toString(36).substr(2, 12);
       }
     </script>
 
