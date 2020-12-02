@@ -584,7 +584,7 @@
         });
 
         socket.on('new message', function (data) {
-          var last_div = $('.chat > div:last')[0];
+          var last_div = $('.chat > div:nth-last-of-type(0)')[0];
 
           // This checks for the last user
           // If you are the last user, attach the message instead of creating a new div
@@ -600,11 +600,13 @@
           }
           if (data.user != last_user) {
             $chat.append(
-              '<i class="fas fa-circle fa-2x" style="margin-right: 10px;"></i>' +
+              '<div class="chat-msg">' +
+                '<i class="fas fa-circle fa-2x" style="margin-right: 10px;"></i>' +
                 '<div class="well well-sm message-well"><strong>' +
                 data.user +
                 '</strong>: ' +
                 data.msg +
+                '</div>' +
                 '</div>',
             );
             // $vidlist.append('<div class="vid-item"><div class="thumb"><img src="http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"></div><div class="desc">Jessica Hernandez & the Deltas - Dead Brains</div></div>');

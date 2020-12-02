@@ -73,5 +73,5 @@
 }
 .chat-msg {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
