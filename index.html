@@ -48,7 +48,7 @@
       <h1>Entering...</h1>
     </div>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <nav id="nav-controls" class="navbar navbar-expand-lg fixed-top navbar-dark" style="display: none">
       <div class="container-fluid party-nav">
         <div class="papo-brand">
           <img src="img/logo-img.png" alt="Papo Party logo" height="40" width="40" />
@@ -59,29 +59,34 @@
             </h2>
           </div>
         </div>
-        <div class="videoUrl">
-          <input
-            type="Video"
-            style="max-width: 800px; min-width: 470px; margin-right: 0.5rem; margin-bottom: 0.5rem; float: left"
-            id="inputVideoId"
-            placeholder="Enter a video url..."
-          />
-          <button id="changeButton" onclick="changeVideoParse(roomnum)" class="play-btn"><i class="fas fa-play fa-2x"></i> Play</button>
-          <div class="dropdown">
-            <button
-              class="play-btn"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i class="fas fa-user-friends fa-2x"></i> Users
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <!-- <div class="col-md-13"> -->
-              <div class="well online-users noscrollbar">
-                <ul class="list-group" id="users"></ul>
+        <div class="controls">
+          <div class="videoUrl">
+            <input
+              type="Video"
+              style="max-width: 800px; min-width: 470px; margin-right: 0.5rem; margin-bottom: 0.5rem; float: left"
+              id="inputVideoId"
+              placeholder="Enter a video url..."
+            />
+          </div>
+          <div class="buttons-grid">
+            <button id="changeButton" onclick="changeVideoParse(roomnum)" class="play-btn"><i class="fas fa-play fa-2x"></i> Play</button>
+            <button id="syncbutton" onclick="syncVideo(roomnum);syncAlert()" class="play-btn"><i class="fa fa-sync fa-2x"></i> Sync</button>
+            <div class="dropdown">
+              <button
+                class="play-btn"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-user-friends fa-2x"></i> Users
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <!-- <div class="col-md-13"> -->
+                <div class="well online-users noscrollbar">
+                  <ul class="list-group" id="users"></ul>
+                </div>
               </div>
             </div>
           </div>
@@ -89,7 +94,7 @@
         <div class="chat-header">
           <div class="header-counter">
             <h2>Talk to your room friends!</h2>
-            <img src="img/counter.png" alt="User Counter" />
+            <div id="usercount" style="width: 55px; height: -webkit-fill-available" class="usercounter"></div>
           </div>
           <button
             style="background-color: transparent"
@@ -98,7 +103,7 @@
             data-toggle="modal"
             data-target="#inviteModal"
           >
-            <i class="fas fa-share-alt fa-2x"></i>
+            <i class="fas fa-share-alt fa-2x"></i> Share
           </button>
         </div>
       </div>
@@ -124,16 +129,12 @@
               <br />
               <!-- <p style="color: red; margin-bottom: 0px" id="missinginfo2"></p> -->
               <!-- <button type="button" onClick="randomroom()" class="btn btn-primary random">Random</button> -->
-              <input required placeholder="Password" type="password" id="roomnum" />
+              <input required placeholder="Room ID" id="roomnum" />
               <br />
-              <input style="margin-top: 10px" type="submit" class="btn btn-primary loginbtn" value="Enter" />
+              <input id="login-btn" style="margin-top: 10px" type="submit" class="btn btn-primary loginbtn" value="Join" />
               <br />
-              <img src="img/googleLogin.png" alt="Login with Google" />
-              <br />
-              <img src="img/fbLogin.png" alt="Login with Facebook" />
-              <hr style="height: 65pt; visibility: hidden" />
               <div class="signup">
-                <p>Doesn't have a Papo account? <a href="/">Sign up for free!</a></p>
+                <p>Doesn't have a Papo Party going on? </br> Create yourself one above using a username and a room ID!</p>
               </div>
             </div>
           </form>
@@ -538,6 +539,13 @@
       </div>
     </div>
     <!-- /.container -->
+    <script>
+      document.getElementById('login-btn').addEventListener('click', showNavbar);
+
+      function showNavbar() {
+        document.getElementById('nav-controls').setAttribute('style', 'display: show');
+      }
+    </script>
 
     <script>
       var socket = io.connect();
@@ -556,6 +564,7 @@
         var $userFormArea = $('#userFormArea');
         var $userForm = $('#userForm');
         var $users = $('#users');
+        var $usercount = $('#usercount');
         var $username = $('#username');
         var $roomnum = $('#roomnum');
         var $userColor = $('#userColor');
@@ -729,12 +738,16 @@
 
         socket.on('get users', function (data) {
           var html = '';
+          var html2 = '';
           for (i = 0; i < data.length; i++) {
             html += '<li style="padding-right: 10em;" class="list-group-item chat-users">' + data[i] + '</li>';
             // html += '<div class="well well-sm message-well">' + data[i] + '</div>';
             // <div class="well well-sm message-well"><strong>
           }
 
+          html2 += data.length.toString() + ' ' + '<i style="color: #333" class="fas fa-user-friends"></i>';
+
+          $usercount.html(html2);
           $users.html(html);
         });
 

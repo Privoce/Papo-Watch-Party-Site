@@ -186,7 +186,7 @@ select[multiple].input-sm {
 
 .chat {
   min-width: 315px;
-  min-height: 80vh;
+  min-height: 78vh;
   max-height: 81vh;
   overflow: scroll;
   border: 1px solid gray;

@@ -23,6 +23,12 @@
   display: flex;
 }
 
+.buttons-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .play-btn {
   display: flex;
   flex-direction: column;
@@ -30,6 +36,9 @@
   border: none;
   color: #fafafa;
   width: 40px;
+  padding: 0;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .chat-header {
@@ -74,4 +83,19 @@
 .chat-msg {
   display: flex;
   flex-direction: row;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.usercounter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #333;
+  background-color: #fafafa;
+  border-radius: 4px;
 }
